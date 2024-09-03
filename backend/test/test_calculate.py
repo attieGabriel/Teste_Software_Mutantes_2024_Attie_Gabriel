@@ -1,4 +1,13 @@
-from backend.calculate import calculate_bmi, get_bmi_category
+import sys
+import os
+
+# Caminho absoluto para o arquivo calculate.py
+calculate_path = 'C:\\Users\\Gabriel\\Programacao\\VSCODE\\BMI-Calculator\\backend'
+
+# Adicionar o caminho ao sys.path
+sys.path.insert(0, calculate_path)
+
+from calculate import calculate_bmi, get_bmi_category
 import pytest
 
 
@@ -45,4 +54,7 @@ def test_category():
 def test_invalid_category_input():
     with pytest.raises(TypeError):
         get_bmi_category('16.0')
+        
+def test_mutante():
+    assert calculate_bmi(1.0, 150.0) == 1500000
 
