@@ -15,7 +15,7 @@ def calculate_bmi(height_cm: float or int, weight_kg: float or int) -> float:
     if not isinstance(height_cm, (float, int)) or not isinstance(weight_kg, (float, int)):
         raise TypeError("height_cm and weight_kg must be of type float or int")
 
-    if height_cm <= 1 or weight_kg <= 0:
+    if height_cm == 0 or weight_kg == 0:
         return 0
 
     # Calculate BMI using the formula: weight / (height^2)
